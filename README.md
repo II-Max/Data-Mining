@@ -6,8 +6,9 @@
 <div align="center">
   <img src="https://skillicons.dev/icons?i=py,vscode,github" />
 </div>
-Dự án được xây dựng trên ngôn ngữ lập trình bậc cao Python,
-kết hợp khả năng phân tích cấu trúc DOM của thư viện BS4
+
+Dự án được tạo ra mới mục đích thu thập dữ liệu từ website và được xây dựng trên ngôn ngữ lập trình bậc cao Python,
+Dựa trên khả năng phân tích cấu trúc DOM của thư viện BS4
 và thư viện Pandas. Điểm nổi bật của công cụ là cơ chế Auto-Discovery.
 
 <br>✨ Cách Sử Dụng
