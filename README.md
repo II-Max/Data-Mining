@@ -7,7 +7,7 @@ Dự án được xây dựng trên ngôn ngữ lập trình bậc cao Python,
 kết hợp khả năng phân tích cấu trúc DOM của thư viện BS4
 và thư viện Pandas. Điểm nổi bật của công cụ là cơ chế Auto-Discovery.
 
-<br>##✨ Cách Sử Dụng
+<br>✨ Cách Sử Dụng
 
 1. Khởi chạy file Python (main.py).
 
@@ -16,7 +16,7 @@ và thư viện Pandas. Điểm nổi bật của công cụ là cơ chế Auto-
 3. Nhập id/class quét được bởi tool trên web.
 
 4. Nhận kết quả: File du_lieu.csv sẽ được lưu tự động cùng thư mục, sẵn sàng để phân tích bằng Excel hoặc Power BI.
-<br>##🛠️ Tool & Language
+🛠️ Tool & Language
 <div align="center">
   <img src="https://skillicons.dev/icons?i=c,cpp,cs,py,java,html,css,js,r,mysql,vscode,github" />
 </div>
