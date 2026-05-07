@@ -1,0 +1,52 @@
+# Security - Secrets & Keys
+.env
+Data/API.env
+API.env
+*.key
+*.secret
+
+# Environment
+venv/
+ENV/
+env/
+
+# Loại bỏ thư mục cấu hình Visual Studio
+.vs/
+.vscode/
+
+# Các tệp rác hệ thống và Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs và file xuất ra
+logs/
+*.log
+mining_log.txt
+Data/*.xlsx
+Data/*.csv
+reports/
+
+# Runtime data
+Data/mining_log.txt
+
+# Temporary files
+*.tmp
+*.bak
+*.temp
+
+# Do not commit individual papers
+Validate/

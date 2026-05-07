@@ -1,0 +1,12 @@
+2026-05-07 11:36:13,275 - INFO - Connecting to: https://dongnguyen.bacninh.gov.vn/danh-b%E1%BA%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD
+2026-05-07 11:36:14,063 - INFO - Connection successful
+2026-05-07 11:36:18,195 - INFO - Starting table mining
+2026-05-07 11:36:18,211 - INFO - Found 8 tables
+2026-05-07 11:36:18,221 - INFO - CSV export complete
+2026-05-07 11:36:18,372 - INFO - Excel export complete
+2026-05-07 11:38:14,822 - INFO - Connecting to: https://dongnguyen.bacninh.gov.vn/danh-b%E1%BA%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD
+2026-05-07 11:38:15,382 - INFO - Connection successful
+2026-05-07 11:38:16,816 - INFO - Starting table mining
+2026-05-07 11:38:16,832 - INFO - Found 8 tables
+2026-05-07 11:38:16,842 - INFO - CSV export completed
+2026-05-07 11:38:16,990 - INFO - Excel export completed
