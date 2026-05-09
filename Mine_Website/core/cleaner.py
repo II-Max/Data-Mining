@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 
+
 def extract_clean_text(html):
 
     soup = BeautifulSoup(
@@ -14,8 +15,4 @@ def extract_clean_text(html):
     ]):
         tag.decompose()
 
-    clean_text = soup.get_text(
-        separator=" "
-    )
-
-    return clean_text
+    return soup.get_text(separator=" ")

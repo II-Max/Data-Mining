@@ -3,65 +3,70 @@ import pandas as pd
 from core.config import OUTPUT_DIR
 from core.logger import logger
 
-def export_tables_csv(ranked_tables):
+
+def export_site_tables(ranked_tables, site_name):
 
     if not ranked_tables:
 
         logger.warning(
-            "No tables to export"
+            f"No tables found for {site_name}"
         )
 
         return
 
-    for table in ranked_tables:
+    # ===== EXCEL EXPORT =====
 
-        filename = (
-            OUTPUT_DIR /
-            f"table_{table['index']}.csv"
-        )
-
-        table["dataframe"].to_csv(
-            filename,
-            index=False,
-            encoding="utf-8-sig"
-        )
-
-    logger.info(
-        "CSV export completed"
-    )
-
-def export_tables_excel(ranked_tables):
-
-    if not ranked_tables:
-
-        logger.warning(
-            "No tables to export"
-        )
-
-        return
-
-    output_file = (
+    excel_file = (
         OUTPUT_DIR /
-        "all_tables.xlsx"
+        f"{site_name}.xlsx"
     )
 
     with pd.ExcelWriter(
-        output_file,
+        excel_file,
         engine="openpyxl"
     ) as writer:
 
         for table in ranked_tables:
 
-            sheet_name = (
-                f"Table_{table['index']}"
-            )
+            df = table["dataframe"]
 
-            table["dataframe"].to_excel(
+            df.to_excel(
                 writer,
-                sheet_name=sheet_name,
+                sheet_name=f"Table_{table['index']}",
                 index=False
             )
 
+    # ===== COMBINED CSV EXPORT =====
+
+    combined_file = (
+        OUTPUT_DIR /
+        f"{site_name}_combined.csv"
+    )
+
+    with open(
+        combined_file,
+        "w",
+        encoding="utf-8-sig"
+    ) as f:
+
+        for table in ranked_tables:
+
+            df = table["dataframe"]
+
+            separator = (
+                f"\n--- CUT TABLE "
+                f"{table['index']} ---\n"
+            )
+
+            f.write(separator)
+
+            df.to_csv(
+                f,
+                index=False
+            )
+
+            f.write("\n")
+
     logger.info(
-        "Excel export completed"
+        f"Export completed for {site_name}"
     )

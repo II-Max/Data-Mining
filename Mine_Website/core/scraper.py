@@ -12,28 +12,42 @@ HEADERS = {
     )
 }
 
+session = requests.Session()
+
+session.headers.update(HEADERS)
+
+
 def fetch_page(url):
 
     try:
-        logger.info(f"Connecting to: {url}")
 
-        session = requests.Session()
-
-        session.headers.update(HEADERS)
+        logger.info(
+            f"Connecting to: {url}"
+        )
 
         response = session.get(
             url,
-            timeout=15
+            timeout=30,
+            verify=False,
+            allow_redirects=True
         )
 
         response.raise_for_status()
 
-        logger.info("Connection successful")
+        # ===== FIX ENCODING =====
+
+        response.encoding = response.apparent_encoding
+
+        logger.info(
+            f"Success: {url}"
+        )
 
         return response.text
 
     except requests.exceptions.RequestException as e:
 
-        logger.error(f"Connection error: {e}")
+        logger.error(
+            f"Connection error for {url}: {e}"
+        )
 
-        raise
+        return None

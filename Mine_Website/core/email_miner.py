@@ -11,9 +11,8 @@ EMAIL_REGEX = (
     r'\.[A-Za-z]{2,}\b'
 )
 
-def mine_emails(html):
 
-    logger.info("Starting email mining")
+def mine_emails(html):
 
     clean_text = extract_clean_text(html)
 
@@ -32,15 +31,16 @@ def mine_emails(html):
 
     return emails
 
-def export_emails(emails):
+
+def export_emails(emails, site_name):
 
     if not emails:
-        logger.warning(
-            "No emails to export"
-        )
         return
 
-    output_file = OUTPUT_DIR / "emails.csv"
+    filename = (
+        OUTPUT_DIR /
+        f"{site_name}_emails.csv"
+    )
 
     df = pd.DataFrame(
         emails,
@@ -48,11 +48,7 @@ def export_emails(emails):
     )
 
     df.to_csv(
-        output_file,
+        filename,
         index=False,
         encoding="utf-8-sig"
-    )
-
-    logger.info(
-        "Emails exported successfully"
     )
